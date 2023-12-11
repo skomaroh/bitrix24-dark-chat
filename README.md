@@ -2,7 +2,7 @@
 
 Dark theme for the new Bitrix24 chat in the desktop app
 
-You can put `user_style.css` into the folder:
+You can put `user_style.css` into the folder ( `CTRL(CMD)+SHIFT+L` ):
 
 ### Windows
 C:\Users\#user#\AppData\Roaming\Bitrix\Desktop\3.0
