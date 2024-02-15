@@ -74,6 +74,7 @@
 	--tag-secondary-color: #333;
 }
 
+
 .bx-im-list-recent-create-chat__container {
 	--im-list-recent-create-chat__background-color_not-active: var(--chat-picked);
 	--im-list-recent-create-chat__font-color_header: var(--font-main);
@@ -97,21 +98,10 @@
 .bx-im-content-notification-item__container {
 	margin: 0 1em;
 }
-.bx-im-sidebar-header__scope,
-.bx-im-sidebar-wrapper__scope,
-.bx-im-sidebar__scope,
-.bx-im-sidebar-detail-header__scope {
-    --im-sidebar-header__background-color_container: var(--main-bg);
-    --im-sidebar-header__background-color_left-border: var(--main-bg);
-    --im-sidebar-chat__background-color_container: var(--sidebar-bg);
-    --im-sidebar__background-color_box: var(--main-bg);
-    --im-sidebar__background-color_detail-content: var(--main-bg);
-    --im-sidebar-detail-header__border-color_separator: var(--left-menu-bg);
-    color: var(--font-main);
-}
 .bx-im-sidebar-header__container {
 	border-width: 0px;
 	height: 64px;
+	color: var(--font-main);
 }
 .bx-im-button__container.--color-primary {
 	--im-button__background-color: var(--chat-enabled);
@@ -127,8 +117,9 @@
 	--im-button__border-color: var(--font-secondary);
 	--im-button__color: var(--font-thirdly);
 }
-.bx-im-sidebar-main-detail__user:hover {
-    --im-sidebar-main-detail__background-color_user: var(--dark);
+
+.bx-im-sidebar-main-detail__scope {
+	--im-sidebar-main-detail__background-color_user: var(--chat-hover);
 }
 .bx-im-list-recent-item__balloon_container {
     text-transform: none;
@@ -146,15 +137,12 @@
 :root {
     --im-notification-panel-text-color: var(--font-main);
 }
-.bx-im-search-result__scope {
-    --im-search-result__background-color_container: transparent;
-	--im-search-result__color_empty-state-title: var(--font-thirdly);
-	--im-search-result__color_empty-state-subtitle: var(--font-secondary);
+.bx-im-chat-search__scope {
+	--im-chat-search__background-color_container: transparent;
 }
-.bx-im-search-result-section__scope {
-	--im-search-result-section__color_title-text: var(--font-thirdly);
-	--im-search-result-section__color_show-more-button-text: var(--font-thirdly);
-	--im-search-result-section__color_show-more-button-text-hover: var(--font-main);
+.bx-im-search-item__scope {
+	--im-search-item__background-color_container: transparent;
+	--im-search-item__background-color_hover-container: var(--chat-hover);
 }
 .bx-im-list-recent__scope {
     --im-list-recent__background-color: var(--main-bg);
@@ -370,9 +358,6 @@
 }
 .bx-im-user-list-content__user-container:hover {
     --im-user-list-content__background-color_user: var(--darkest);
-}
-.bx-im-button__container:hover {
-    --im-button__color_hover: var(--font-main);
 }
 .bx-im-message-base__container.--self:first-child .bx-im-message-base__body:before {
     background-image: none;
@@ -614,9 +599,6 @@
     --im-search-input__background-color_input-active: var(--search-bg);
     --im-search-input__border-color_active-input: var(--message-self-bg);
 }
-.bx-im-sidebar-search-header__scope {
-    --im-sidebar-search-header__border-color_separator: var(--message-input-bg);
-}
 .bx-im-message-search-item__scope {
     --im-sidebar-message-search-detail__background-color_item: var(--message-bg);
     --im-sidebar-message-search-detail__color_message-text: var(--font-main);
@@ -696,6 +678,42 @@
 .bx-im-content-chat__dialog_container *:hover::-webkit-scrollbar-thumb {
 	background-color: var(--chat-hover) !important;
 }
+	
+.bx-im-list-recent__calls_container.--with-shadow::after {
+	background: linear-gradient(178.92deg, var(--main-bg) 17.38%, rgba(255, 255, 255, 0.0001) 96.59%)
+}
+main-preview__scope {
+	--im-sidebar-main-preview__border-color_avatar: var(--chat-enabled);
+}
+.bx-im-sidebar-panel__container {
+	--im-sidebar-panel__background-color_panel_container: var(--sidebar-bg);
+}
+.bx-im-sidebar-main-panel__container {
+	--im-sidebar-main-panel__background-color_container: var(--sidebar-bg);
+	--im-sidebar-main-panel__background-color_block: var(--main-bg);
+}
+.bx-im-sidebar-detail-header__scope {
+	--im-sidebar-detail-header__border-color_separator: var(--left-menu-bg);
+	background-color: var(--main-bg);
+}
+.bx-im-sidebar-header__scope {
+	--im-sidebar-header__background-color_container: var(--main-bg);
+	--im-sidebar-header__background-color_left-border: var(--main-bg);
+}
+.bx-im-sidebar-search-header__scope {
+    --im-sidebar-search-header__border-color_separator: var(--sidebar-bg);
+	background-color: var(--main-bg);
+}
+.bx-im-chat-with-user-item__scope {
+	--im-chat-with-user-item__background-color_container: var(--main-bg);
+	--im-chat-with-user-item__background-color_hover-container: var(--chat-hover);
+}
+.bx-im-entity-selector-forward__scope {
+	--im-entity-selector-forward__color_popup-title: var(--font-main);
+}
+.bx-im-entity-selector-forward__container {
+	background-color: var(--main-bg);
+}
 
 /*copilot*/
 .bx-im-list-copilot__scope {
@@ -711,8 +729,8 @@
 	--im-list-container-copilot__font-color_header-title: var(--light);
 }
 .bx-im-content-copilot__container {
-	background-color: var(--left-menu-bg) !important;
-	background-size: auto, 0 !important;
+	background-image: none !important;
+	background-color: transparent !important;
 }
 .bx-im-copilot-header__container {
 	background-color: var(--dark);
