@@ -116,7 +116,9 @@
 	--im-button__border-color: var(--font-secondary);
 	--im-button__color: var(--font-thirdly);
 }
-
+.bx-im-sidebar-main-preview__scope {
+	--im-sidebar-main-preview__border-color_avatar: var(--chat-hover);
+}
 .bx-im-sidebar-main-detail__scope {
 	--im-sidebar-main-detail__background-color_user: var(--chat-hover);
 }
@@ -143,6 +145,7 @@
 	--im-search-item__background-color_container: transparent;
 	--im-search-item__background-color_hover-container: var(--chat-hover);
 }
+
 .bx-im-list-recent__scope {
     --im-list-recent__background-color: var(--main-bg);
     --im-list-recent__background-color_calls-section: var(--color-button-primary-back-hover);
@@ -156,6 +159,27 @@
 .bx-im-list-container-recent__scope {
     --im-list-container-recent__background-color: var(--main-bg);
 	--im-list-container-recent__background-color_create-chat: var(--new-chat-button-bg);
+}
+.bx-im-list-recent__pinned_scope {
+    --im-list-recent__background-color: transparent;
+    --im-list-recent__background-color_hover: var(--chat-hover);
+}
+.bx-im-list-recent__pinned_container {
+    --im-list-recent__background-color_pinned-section: var(--chat-picked);
+    --im-list-recent__border-color_pinned-section: transparent;
+}
+/************/
+.bx-im-list-recent__container {
+	--im-list-recent__background-color: var(--main-bg);
+	--im-list-recent__background-color_selected: var(--chat-enabled);
+	--im-list-recent__background-color_pinned-item: transparent;
+	--im-list-recent__background-color_pinned-item_hover: var(--chat-hover);
+}
+.bx-im-list-recent-item__wrap {
+	--im-list-recent__background-color_selected: var(--chat-enabled);
+	--im-list-recent__font-color_message: var(--font-secondary);
+	--im-list-recent-item__background-color: transparent;
+	--im-list-recent-item__background-color_hover: var(--chat-hover);
 }
 .bx-im-search-input__element {
     background-image: none;
@@ -396,14 +420,6 @@
 .bx-im-chat-title__scope {
 	--im-chat-title__font-color: var(--font-main);
 	--im-list-recent__font-color_message: var(--font-secondary);
-}
-.bx-im-list-recent__pinned_scope {
-    --im-list-recent__background-color: transparent;
-    --im-list-recent__background-color_hover: var(--chat-hover);
-}
-.bx-im-list-recent__pinned_container {
-    --im-list-recent__background-color_pinned-section: var(--chat-picked);
-    --im-list-recent__border-color_pinned-section: transparent;
 }
 .bx-im-menu__container {
     --im-menu__background-color: var(--left-menu-bg);
@@ -677,9 +693,8 @@
 .bx-im-content-chat__dialog_container *:hover::-webkit-scrollbar-thumb {
 	background-color: var(--chat-hover) !important;
 }
-	
-.bx-im-list-recent__calls_container.--with-shadow::after {
-	background: linear-gradient(178.92deg, var(--main-bg) 17.38%, rgba(255, 255, 255, 0.0001) 96.59%)
+.bx-im-list-recent__calls_container {
+	--im-list-recent-calls__background-color: var(--video-button-bg);
 }
 main-preview__scope {
 	--im-sidebar-main-preview__border-color_avatar: var(--chat-enabled);
@@ -712,6 +727,22 @@ main-preview__scope {
 }
 .bx-im-entity-selector-forward__container {
 	background-color: var(--main-bg);
+}
+	
+#bx-im-message-context-menu, #im-recent-context-menu {
+	background-color: var(--message-bg);
+}
+:is(#bx-im-message-context-menu, #im-recent-context-menu) .menu-popup-item-text {
+	color: var(--font-main);
+}
+:is(#bx-im-message-context-menu, #im-recent-context-menu) :is(.menu-popup-item:hover, .menu-popup-item.menu-popup-item-open) {
+	background-color: var(--message-self-bg);
+}
+:is(#bx-im-message-context-menu, #im-recent-context-menu) .popup-window-angly--arrow {
+	background-color: var(--message-bg);
+}
+:is(#bx-im-message-context-menu, #im-recent-context-menu) .popup-window-delimiter {
+	background-color: var(--message-input-bg);
 }
 
 /*copilot*/
