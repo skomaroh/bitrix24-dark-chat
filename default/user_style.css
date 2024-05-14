@@ -62,10 +62,10 @@
 	
 	--system-image: repeating-linear-gradient(
         65deg,
-        var(--darkest),
-        var(--darkest) 10px,
-        var(--darker) 10px,
-        var(--darker) 20px
+        var(--left-menu-bg),
+        var(--left-menu-bg) 10px,
+        var(--main-bg) 10px,
+        var(--main-bg) 20px
     );
 	
 	--tag-light-bg: #6a737f;
@@ -73,7 +73,6 @@
 	--tag-secondary-bg: #bcedfc;
 	--tag-secondary-color: #333;
 }
-
 
 .bx-im-list-recent-create-chat__container {
 	--im-list-recent-create-chat__background-color_not-active: var(--chat-picked);
@@ -116,6 +115,7 @@
 .bx-im-button__container.--color-light-border {
 	--im-button__border-color: var(--font-secondary);
 	--im-button__color: var(--font-thirdly);
+	--im-button__color_hover: var(--font-main);
 }
 .bx-im-sidebar-main-preview__scope {
 	--im-sidebar-main-preview__border-color_avatar: var(--chat-hover);
@@ -197,6 +197,13 @@
 	--im-navigation__background-color_hover: var(--left-menu-hover-bg);
     --im-navigation__background-color: var(--left-menu-bg);
 }
+.bx-im-navigation__shadow {
+	--degree: 180deg;
+	background-image: linear-gradient(var(--degree), var(--chat-hover) 0%, var(--chat-hover) 50.28%, rgba(66, 74, 84, 0) 100%) !important;
+}
+.bx-im-navigation__shadow.--bottom {
+	--degree: 0deg;
+}
 .bx-im-content-notification__header_filter-button,
 .bx-im-content-notification__header_read-all-button {
     filter: invert(1);
@@ -242,6 +249,24 @@
 }
 .bx-im-sidebar-file-preview-item__scope {
 	--im-sidebar-file-preview-item__border-color_preview-box: var(--file-border-bg);
+}
+.bx-im-sidebar-file-preview__header_container.--active .bx-im-sidebar-file-preview__title-text {
+	color: var(--font-side-main);
+}
+.bx-im-sidebar-chat-description__container {
+	--im-sidebar-info-preview__color_description: var(--font-side-main);
+	--im-sidebar-info-preview__color_show-full-description: var(--link-color);
+}
+.bx-im-sidebar-chat-favourites__container {
+	--im-sidebar-chat-favourites__color_counter: var(--font-main);
+	--im-sidebar-chat-favourites__background-color_counter: var(--message-self-bg);
+}
+.bx-im-sidebar-chat-links__container {
+	--im-sidebar-chat-links__color_counter: var(--font-main);
+	--im-sidebar-chat-links__background-color_counter: var(--message-self-bg);
+}
+.bx-im-sidebar-chat-members-avatars__container {
+	--im-sidebar-chat-members-avatars__border-color_avatar: var(--message-self-bg);
 }
 .bx-im-dialog-chat__pinned_unpin,
 .bx-im-chat-header__icon,
@@ -392,6 +417,10 @@
 .bx-im-media-file__scope {
     --im-media-file__font-color_file-size: var(--font-secondary);
 }
+.bx-im-base-file-item__container {
+	--im-base-file-item__color_file-name: var(--font-main);
+	--im-base-file-item__color_file-size: var(--font-secondary);
+}
 .bx-im-message-base__edit-mark {
     --im-message-base__font-color_edit-mark: var(--font-secondary);
 }
@@ -507,6 +536,14 @@
     color: var(--font-main);
     border-color: var(--left-menu-bg);
 }
+.bx-im-content-create-chat__textarea_container textarea {
+	background-color: var(--message-input-bg);
+	color: var(--font-secondary);
+}
+.bx-im-content-create-chat-radio__container {
+	--im-content-create-chat-radio__font-color_title: var(--font-thirdly);
+	--im-content-create-chat-radio__font-color_subtitle: var(--font-secondary);
+}
 .bx-im-message-default-content__scope {
     --im-message-default-content__font-color_message: var(--font-thirdly);
 }
@@ -535,7 +572,11 @@
 }
 .bx-im-message-status__scope {
     --im-message-status__font-color_date: var(--font-secondary);
-    --im-message-status__font-color_edit-mark: var(--darkgrey);
+    --im-message-status__font-color_edit-mark: var(--font-secondary);
+}
+.bx-im-message-base__wrap.--self .bx-im-message-quote {
+	background-color: var(--message-self-reply-bg);
+	--bx-im-message-quote-with-context__border-color: var(--message-self-bg);
 }
 .bx-im-message-status__icon.--sent {
     filter: brightness(3);
@@ -679,6 +720,9 @@
 	--im-dialog-chat__font-color_pinned-author: var(--font-secondary);
 	--im-dialog-chat__font-color_pinned-text: var(--font-main);
 	--im-dialog-chat__background-color_scroll-button: var(--chat-enabled);
+	--im-dialog-chat__background-color_scroll-button-counter: var(--message-self-reply-bg);
+	--im-dialog-chat__background-color_scroll-button-counter-hover: var(--message-self-bg);
+	--im-dialog-chat__background-color_scroll-button-border: var(--new-chat-button-bg);
 }
 .bx-im-chat-header-call-button__scope {
 	--im-chat-header-call-button__background-color_container: var(--video-button-bg);
@@ -710,6 +754,7 @@ main-preview__scope {
 .bx-im-sidebar-detail-header__scope {
 	--im-sidebar-detail-header__border-color_separator: var(--left-menu-bg);
 	background-color: var(--main-bg);
+	color: var(--font-main);
 }
 .bx-im-sidebar-header__scope {
 	--im-sidebar-header__background-color_container: var(--main-bg);
@@ -729,21 +774,117 @@ main-preview__scope {
 .bx-im-entity-selector-forward__container {
 	background-color: var(--main-bg);
 }
-	
-#bx-im-message-context-menu, #im-recent-context-menu {
-	background-color: var(--message-bg);
+.bx-im-toggle__disabled {
+	background-color: var(--left-menu-bg);
 }
-:is(#bx-im-message-context-menu, #im-recent-context-menu) .menu-popup-item-text {
-	color: var(--font-main);
-}
-:is(#bx-im-message-context-menu, #im-recent-context-menu) :is(.menu-popup-item:hover, .menu-popup-item.menu-popup-item-open) {
+.bx-im-toggle__cursor {
 	background-color: var(--message-self-bg);
 }
-:is(#bx-im-message-context-menu, #im-recent-context-menu) .popup-window-angly--arrow {
+.bx-im-list-recent__calls_container.--with-shadow::after {
+	background-color: linear-gradient(178.92deg, var(--chat-picked) 17.38%, var(--chat-picked) 96.59%);
+}
+.bx-im-dialog-channel__comments-button {
+	--im-dialog-channel-comments-button__background-color: var(--message-self-reply-bg);
+	--im-dialog-channel-comments-button__background-color_counter-border: var(--message-self-bg);
+}
+.bx-im-upload-preview__scope {
+	--im-upload-preview__color_title: var(--font-main);
+	--im-upload-preview__border-color_delimeter: var(--chat-picked);
+	--im-upload-preview__border-color_message-input: var(--message-input-border-bg);
+}
+.bx-im-upload-preview__message-text {
+	background-color: var(--message-input-bg);
+
+}
+.bx-im-upload-preview-file-item__item-image {
+	background-color: var(--main-bg);
+}
+.bx-im-gallery-item__container {
+	--bx-im-gallery-item__background-color_container: var(--message-container-bg);
+}
+
+.bx-im-desktop-connection-list-item__scope {
+	--im-desktop-connection-list-item__background-color_container-hover: var(--chat-hover);
+	--im-desktop-connection-list-item__color_title: var(--font-thirdly);
+	--im-desktop-connection-list-item__color_login: var(--font-secondary);
+}
+
+	
+.popup-window {
+	background-color: var(--message-bg);
+	color: var(--font-main);
+}
+.popup-window .menu-popup-item-text {
+	color: var(--font-main);
+}
+.popup-window :is(.menu-popup-item:hover, .menu-popup-item.menu-popup-item-open) {
+	background-color: var(--message-self-bg);
+}
+.popup-window .popup-window-angly--arrow {
 	background-color: var(--message-bg);
 }
-:is(#bx-im-message-context-menu, #im-recent-context-menu) .popup-window-delimiter {
+.popup-window .popup-window-delimiter {
 	background-color: var(--message-input-bg);
+}
+.popup-window .ui-selector-item-title {
+	color: var(--font-main);
+}
+.popup-window .ui-selector-item-box-focused > .ui-selector-item,
+.popup-window .ui-selector-item-box-focused .ui-selector-item-link {
+	background-color: var(--message-pinned-bg);
+}
+.popup-window .ui-selector-footer-default {
+	background-color: var(--message-container-bg);
+}
+.popup-window .ui-selector-footer .ui-selector-footer-link {
+	color: var(--font-secondary);
+}
+.popup-window .ui-selector-footer .ui-selector-footer-link:hover {
+	color: var(--font-main);
+}
+.popup-window .menu-popup-item:hover .menu-popup-item-text {
+	color: var(--font-main);
+}
+.popup-window .ui-btn-link {
+	--ui-btn-color: var(--font-secondary);
+	--ui-btn-color-hover: var(--font-thirdly);
+}
+
+.bx-im-messenger__scope .ui-tag-selector-text-box {
+	background-color: var(--message-input-bg);
+}
+
+/*channels*/
+.bx-im-list-container-channel__container {
+	--im-list-container-channel__background-color: var(--main-bg);
+	--im-list-container-channel__font-color_header-title: var(--font-main)
+}
+.bx-im-list-channel__container {
+	--im-list-channel__background-color: var(--main-bg);
+}
+.bx-im-list-channel-item__wrap {
+	--im-list-channel-item__background-color: transparent;
+	--im-list-channel-item__background-color_hover: var(--chat-hover);
+	--im-list-channel__background-color_selected: var(--chat-enabled);
+}
+.bx-im-comment-header__container {
+	--im-comment-header__font-color_title: var(--font-main);
+	--im-comment-header__font-color_subtitle: var(--font-secondary);
+}
+.bx-im-comments-header-follow__container {
+	--im-comments-header-follow__background-color_border: var(--main-bg);
+	--im-comments-header-follow__font-color: var(--font-secondary);
+}
+.bx-im-comment-header__back {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.861 17.657l-4.527-4.527L10.2 12l1.134-1.129 4.527-4.527-1.597-1.597L7.01 12l7.254 7.254 1.597-1.598z' fill='%23818688'/%3E%3C/svg%3E")
+}
+.bx-im-content-chat-start__container {
+	background-color: var(--left-menu-bg) !important;
+	background-size: auto, 0 !important;
+}
+.bx-im-message-comments-panel__container {
+	--im-message-comments-panel__background-color_container: var(--left-menu-bg);
+	--im-message-comments-panel__background-color_container-hover: var(--left-menu-hover-bg);
 }
 
 /*copilot*/
@@ -760,8 +901,8 @@ main-preview__scope {
 	--im-list-container-copilot__font-color_header-title: var(--light);
 }
 .bx-im-content-copilot__container {
-	background-image: none !important;
-	background-color: transparent !important;
+	background-color: var(--left-menu-bg) !important;
+	background-size: auto, 0 !important;
 }
 .bx-im-copilot-header__container {
 	background-color: var(--dark);
@@ -774,4 +915,130 @@ main-preview__scope {
 	--im-message-copilot-creation__background-color_action-hover: var(--color-button-primary-back);
 	--im-message-copilot-creation__font-color_text-hover: var(--light);
 	--im-message-copilot-creation__background-color_action-border: var(--color-button-primary-border)
+}
+.bx-im-message-copilot-base-message__container {
+	--im-message-copilot-answer__background-color_body: var(--dark);
+	--im-message-copilot-answer__background-color_bottom-panel: var(--darker);
+}
+
+/*openlines*/
+.bx-messenger-image .bx-messenger-box-contact,
+.bx-messenger-image .bx-messenger-box-hello,
+.bx-messenger-image .bx-messenger-box-dialog,
+.bx-messenger-search,
+.bx-messenger-box-dialog .bx-messenger-panel {
+	background-color: var(--darker);
+}
+.bx-messenger-image .bx-messenger-box-extra {
+	background-color: var(--darker);
+}
+.bx-messenger-cl-item-empty {
+	color: var(--grey);
+}
+.bx-messenger-recent-category-title-answered {
+	color: var(--green) !important;
+	text-shadow: none;
+}
+.bx-messenger-recent-category-title-answered:after {
+	background-color: var(--green);
+}
+.bx-messenger-recent-group-title,
+.bx-messenger-chat-title-lines,
+.bx-messenger-panel-chat-user {
+	color: var(--grey);
+	text-shadow: none;
+}
+.bx-messenger-cl-item:hover {
+	background-color: var(--dark);
+}
+.bx-messenger-cl-user {
+	color: var(--light);
+}
+.bx-messenger-cl-search-wrap .bx-messenger-input {
+	color: var(--light);
+}
+.bx-messenger-image .bx-messenger-body-bg {
+	background-image: none;
+	background-color: var(--dark);
+}
+.bx-messenger-content-item-content, .bx-messenger-content-item-ol-output .bx-messenger-content-item-content {
+	background-color: var(--darker);
+	border-color: var(--darkest);
+}
+.bx-messenger-content-item .bx-messenger-content-item-content {
+	color: var(--grey);
+}
+.bx-messenger-image .bx-messenger-content-item-avatar-name {
+	background-color: var(--darker);
+	color: var(--grey);
+}
+.bx-messenger-image .bx-messenger-textarea-place {
+	background-color: var(--darkest);
+}
+.bx-messenger-image .bx-messenger-content-item-notice .bx-messenger-content-item-content {
+	background-image: var(--system-image);
+}
+.bx-messenger-content-item-1 .bx-messenger-content-item-content {
+	background-color: var(--color-button-primary-back);
+	border-color: transparent;
+	color: var(--light);
+}
+.bx-messenger-image .bx-messenger-content-item-notify .bx-messenger-content-item-text-message {
+	background-color: var(--dark-alpha);
+	color: var(--grey);
+}
+.bx-messenger-content-item-notice a, .bx-messenger-content-item-notice .bx-messenger-highlight, .bx-messenger-content-item-notice .bx-messenger-ajax {
+	color: var(--link-color);
+	border-color: var(--color-button-primary-border);
+}
+.bx-messenger-ajax-self, .bx-messenger-highlight {
+	background-color: var(--color-button-primary-back);
+	border-color: var(--color-button-primary-border);
+	color: var(--color-button-primary-text)
+}
+.bx-messenger-image .bx-messenger-content-item-notice .bx-messenger-content-item-text-center {
+	color: var(--grey);
+}
+.bx-messenger-message a {
+	color: var(--color-link);
+}
+.bx-im-search-item {
+	--im-search-background-color: transparent;
+}
+.bx-im-component-chat-name-text {
+	--im-chat-title-color: var(--light);
+}
+.bx-im-search-result-item-text {
+	--im-search-font-color: var(--grey);
+}
+
+.bx-messenger-history {
+	background-color: var(--dark)
+}
+.bx-messenger-panel-title {
+	color: var(--light);
+	text-shadow: none;
+}
+.bx-messenger-history-item-3 .bx-messenger-history-item-name, .bx-messenger-history-item-date {
+	color: var(--grey)
+}
+.bx-messenger-history-item-text {
+	color: var(--light)
+}
+.bx-messenger-history-item-text a, .bx-messenger-history-items-wrap .bx-messenger-content-item-system a {
+	color: var(--color-link)
+}
+.bx-messenger-history-item-2, .bx-messenger-history-item-3 {
+	background-color: var(--darker);
+	border-color: var(--darker);
+}
+.bx-messenger-attach-block-row,
+.bx-messenger-content-item-system .bx-messenger-ajax-self, .bx-messenger-content-quote-wrap {
+	color: var(--grey)
+}
+.bx-messenger-content-item-system {
+	opacity: .5;
+}
+.bx-messenger-attach-user .bx-messenger-attach-user-name {
+	color: var(--light) !important;
 }
