@@ -184,8 +184,8 @@
 }
 .bx-im-search-input__element {
     background-image: none;
-    --im-search-input__font-color_primary: var(--font-main);
-    color: var(--font-main);
+	color: var(--font-main);
+	outline: none;
 }
 .bx-im-search-input__element:active {
     background-color: var(--darkest);
@@ -521,7 +521,9 @@
     --im-content-create-chat__background-color_folded-section-hover: var(--chat-hover);
     --im-content-create-chat__background-color_opened-section: var(--main-bg);
     --im-content-create-chat__font-color_opened-section: var(--font-main);
-    --im-content-create-chat__font-color_heading: var(--font-main);
+	--im-content-create-chat__font-color_section: var(--font-main);
+	--im-content-create-chat__font-color_section-hover: var(--font-thirdly);
+	--im-content-create-chat__font-color_section-heading: var(--font-main);
 }
 .bx-im-content-create-chat__scope .ui-tag-selector-outer-container {
     background-color: var(--message-container-bg);
@@ -741,9 +743,6 @@
 .bx-im-list-recent__calls_container {
 	--im-list-recent-calls__background-color: var(--video-button-bg);
 }
-main-preview__scope {
-	--im-sidebar-main-preview__border-color_avatar: var(--chat-enabled);
-}
 .bx-im-sidebar-panel__container {
 	--im-sidebar-panel__background-color_panel_container: var(--sidebar-bg);
 }
@@ -755,6 +754,20 @@ main-preview__scope {
 	--im-sidebar-detail-header__border-color_separator: var(--left-menu-bg);
 	background-color: var(--main-bg);
 	color: var(--font-main);
+}
+.bx-im-sidebar-detail-tabs__scope {
+	--im-sidebar-detail-tabs__background_right-control: linear-gradient(270deg, var(--dark) 0%, var(--dark) 50.28%, rgba(255, 255, 255, 0) 100%);
+	--im-sidebar-detail-tabs__background_left-control: linear-gradient(90deg, var(--dark) 0%, var(--dark) 50.28%, rgba(255, 255, 255, 0) 100%);
+	--im-sidebar-detail-tabs__color_selected-tab: var(--font-main);
+	--im-sidebar-detail-tabs__color_nonselected-tab: var(--font-secondary);
+	--im-sidebar-detail-tabs__border-bottom-color_container: var(--darkest);
+	--im-sidebar-detail-tabs__background-color_selected-tab: var(--message-self-bg);
+}
+.bx-im-sidebar-file-media-detail-item__scope {
+	--im-sidebar-file-media-item__border-color_avatar-container: var(--message-self-reply-bg);
+}
+.bx-im-sidebar__forward-icon {
+	filter: invert();
 }
 .bx-im-sidebar-header__scope {
 	--im-sidebar-header__background-color_container: var(--main-bg);
@@ -781,7 +794,7 @@ main-preview__scope {
 	background-color: var(--message-self-bg);
 }
 .bx-im-list-recent__calls_container.--with-shadow::after {
-	background-color: linear-gradient(178.92deg, var(--chat-picked) 17.38%, var(--chat-picked) 96.59%);
+	background: linear-gradient(178.92deg, var(--chat-hover) 0%, var(--chat-hover) 50.28%, rgba(66, 74, 84, 0) 100%);
 }
 .bx-im-dialog-channel__comments-button {
 	--im-dialog-channel-comments-button__background-color: var(--message-self-reply-bg);
@@ -831,7 +844,10 @@ main-preview__scope {
 }
 .popup-window .ui-selector-item-box-focused > .ui-selector-item,
 .popup-window .ui-selector-item-box-focused .ui-selector-item-link {
-	background-color: var(--message-pinned-bg);
+	background-color: transparent;
+}
+.popup-window .ui-selector-item-box-selected > .ui-selector-item {
+	background-color: var(--darker);
 }
 .popup-window .ui-selector-footer-default {
 	background-color: var(--message-container-bg);
