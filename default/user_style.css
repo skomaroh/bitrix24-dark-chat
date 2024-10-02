@@ -107,7 +107,7 @@
 	--im-button__border-color: var(--chat-enabled);
 }
 .bx-im-button__container.--color-primary-border {
-    --im-button__color: var(--font-secondary);
+    --im-button__color: var(--font-thirdly);
     --im-button__color_hover: var(--font-main);
     --im-button__border-color: var(--font-secondary);
     --im-button__border-color_hover: var(--font-secondary);
@@ -487,7 +487,8 @@
     --im-button__background-color_hover: var(--color-button-primary-back-hover);
     --im-button__border-color: var(--color-button-primary-border);
     --im-button__border-color_hover: var(--color-button-primary-border);
-    --im-button__color: var(--font-secondary);
+    --im-button__color: var(--font-thirdly);
+	--im-button__color_hover: var(--font-main);
 }
 .bx-im-button__container.--color-primary-border {
     --im-button__border-color: var(--color-button-primary-border);
@@ -932,6 +933,11 @@
 	--im-message-copilot-creation__font-color_text-hover: var(--light);
 	--im-message-copilot-creation__background-color_action-border: var(--color-button-primary-border)
 }
+.bx-im-message-conference-creation__scope {
+	--im-message-conference-creation__background-color_content: var(--dark);
+	--im-message-conference-creation__font-color_title: var(--font-main);
+	--im-message-conference-creation__font-color_description: var(--font-thirdly);
+}
 .bx-im-message-copilot-base-message__container {
 	--im-message-copilot-answer__background-color_body: var(--dark);
 	--im-message-copilot-answer__background-color_bottom-panel: var(--darker);
@@ -1057,4 +1063,17 @@
 }
 .bx-messenger-attach-user .bx-messenger-attach-user-name {
 	color: var(--light) !important;
+}
+
+.bx-im-message-sign__scope {
+	--im-message-sign__font-color_title: var(--font-main);
+	--im-message-sign__font-color_description: var(--font-thirdly);
+	--im-message-sign__color_document: var(--color-label-main);
+	--im-message-sign__border-color_link: var(--color-link);
+}
+
+.bx-im-message-copilot-added-users__container {
+	--im-message-copilot-added-users__background-color_content: var(--dark);
+	--im-message-copilot-added-users__color_title: var(--font-main);
+	--im-message-copilot-added-users__font-color_description: var(--font-secondary);
 }
