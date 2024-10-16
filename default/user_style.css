@@ -1077,3 +1077,10 @@
 	--im-message-copilot-added-users__color_title: var(--font-main);
 	--im-message-copilot-added-users__font-color_description: var(--font-secondary);
 }
+.bx-call-message__scope {
+	--call-message__text_primary-color: var(--font-main);
+	--call-message__font-color_date: var(--font-secondary);
+}
+.bx-call-message__icon {
+	border-color: var(--font-secondary);
+}
