@@ -142,7 +142,7 @@
 :root {
     --im-notification-panel-text-color: var(--font-main);
 }
-.bx-im-chat-search__scope {
+.bx-im-chat-search__container {
 	--im-chat-search__background-color_container: transparent;
 }
 .bx-im-search-item__scope {
@@ -272,6 +272,10 @@
 .bx-im-sidebar-chat-members-avatars__container {
 	--im-sidebar-chat-members-avatars__border-color_avatar: var(--message-self-bg);
 }
+.bx-im-dialog-chat__pinned_counter_control {
+	border-color: var(--file-border-bg);
+	color: var(--font-main);
+}
 .bx-im-dialog-chat__pinned_unpin,
 .bx-im-chat-header__icon,
 .bx-im-list-container-recent__header-menu_icon,
@@ -353,7 +357,8 @@
 }
 .bx-im-chat-forms-sections-owner__container .ui-tag-selector-outer-container,
 .bx-im-chat-forms-sections-managers__container .ui-tag-selector-outer-container,
-.bx-im-chat-forms-chat-members__container .ui-tag-selector-outer-container {
+.bx-im-chat-forms-chat-members__container .ui-tag-selector-outer-container,
+.bx-im-entity-selector-add-to-chat__container .ui-tag-selector-outer-container {
     background-color: var(--message-input-bg);
     border-color: var(--message-input-border-bg);
 }
@@ -477,6 +482,8 @@
 	--bx-im-message-quote__color_time: var(--font-secondary);
     --im-message-base__padding-right_body: 9px;
     --im-message-base__padding-left_body: 9px;
+	--bx-im-mention__background-color_highlight: var(--color-button-primary-back-hover);
+	--bx-im-mention__color_highlight: var(--color-button-primary-text);
 }
 .reaction-select-popup {
     background-image: var(--system-image);
@@ -956,6 +963,17 @@
 	--im-message-copilot-answer__background-color_bottom-panel: var(--darker);
 }
 
+.bx-im-message-channel-creation__container {
+	--im-message-channe-creation__background-color_content: var(--color-button-primary-back);
+	--im-message-channe-creation__font-color_title: var(--light);
+	--im-message-channe-creation__font-color_description: var(--font-thirdly);
+}
+.bx-im-message-chat-creation__container {
+	--im-message-chat-creation__background-color_content: var(--color-button-primary-back);
+	--im-message-chat-creation__font-color_title: var(--light);
+	--im-message-chat-creation__font-color_description: var(--font-thirdly);
+}
+
 /*openlines*/
 
 .bx-imol-list-container-recent__container {
@@ -1117,6 +1135,7 @@
 	color: var(--color-label-visited) !important;
 }
 
+
 /** conference **/
 .bx-im-message-type-opponent .bx-im-message-content {
 	background-color: var(--message-bg);
@@ -1162,3 +1181,56 @@
 	--im-chat-forms-button-panel__background-color_container: var(--main-bg);
 }
 
+/*votes*/
+.bx-im-chat__vote-container,
+.bx-im-message-base__wrap.--self .bx-im-chat__vote-container {
+	background-color: var(--new-chat-button-bg);
+}
+.vote__question-text,
+.vote__answer-percent span,
+.vote__answer-percent,
+.vote__answer-text {
+	color: var(--font-main);
+}
+.vote__answer.--selected .vote__answer-percent span {
+	color: var(--color-label-main);
+}
+.vote__answer.--selected .vote__answer-text,
+.vote__notice {
+	color: var(--font-thirdly);
+}
+.vote-display-btn {
+	color: var(--font-side-main);
+}
+.vote-display-btn.--show {
+	color: var(--link-color);
+}
+.vote-display-btn.--vote {
+	background-color: var(--button-back-color);
+}
+.vote-display-btn.--vote.--active,
+.bx-im-message-base__wrap.--self .vote-display-btn.--vote.--active
+{
+	background-color: var(--color-button-primary-back);
+}
+.vote-display-btn.--vote.--active:hover,
+.bx-im-message-base__wrap.--self .vote-display-btn.--vote.--active:hover
+{
+	background-color: var(--color-button-primary-back-hover);
+}
+.vote__progress-bar,
+.bx-im-message-base__wrap.--self .vote__progress-bar {
+	background-color: var(--message-self-bg);
+}
+.vote__progress-bar:hover,
+.bx-im-message-base__wrap.--self .vote__progress-bar:hover,
+.bx-im-message-base__wrap.--self .vote__progress-bar-fill {
+	background-color: var(--message-self-reply-bg);
+}
+.vote__progress-bar-fill {
+	background-color: var(--color-button-primary-back-hover);
+}
+.vote__answer.--selected .vote__progress-bar-fill,
+.bx-im-message-base__wrap.--self .vote__answer.--selected .vote__progress-bar-fill {
+	background-color: var(--reaction-bg);
+}
