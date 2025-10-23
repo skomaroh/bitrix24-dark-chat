@@ -1375,3 +1375,7 @@
 	background-color: transparent !important;
 	background-image: none !important;
 }
+
+.bx-im-message-status__container {
+	--im-message-status__font-color_status: var(--font-secondary);
+}
