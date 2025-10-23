@@ -97,8 +97,26 @@
 	--im-notification-item-hovered-background-color: var(--main-bg);
 	--im-notification-item-content-more-users-dropdown-text-color: var(--font-highlighted);
 }
+.bx-im-content-notification__container {
+	--im-notification-content-background-color: var(--left-menu-bg);
+	--im-notification-panel-border-bottom-color: var(--left-menu-bg);
+	--im-notification-panel-text-color:var(--font-main);
+}
 .bx-im-content-notification-item__container {
-	margin: 0 1em;
+	--im-notification-item-background-color: var(--main-bg);
+	--im-notification-item-hovered-background-color: var(--chat-hover);
+	--im-notification-item-unread-background-color: var(--chat-enabled);
+	--im-notification-item-border-color: var(--message-container-bg);
+	--im-notification-item-border-color-unread: var(--message-self-reply-bg);
+}
+.bx-im-content-notification-item-content__content-text {
+	--font-secondary: var(--font-thirdly);
+}
+.bx-im-content-notification-item-header__title-container .bx-im-chat-title__text {
+	--im-color-palette-black-base: var(--font-main);
+}
+.bx-im-content-notification-item__actions {
+	--ui-color-white-base: var(--button-back-color);
 }
 .bx-im-sidebar-header__container {
 	border-width: 0px;
@@ -148,6 +166,14 @@
 .bx-im-search-item__scope {
 	--im-search-item__background-color_container: transparent;
 	--im-search-item__background-color_hover-container: var(--chat-hover);
+}
+
+.bx-im-list-container-task__container {
+	--im-list-container-task__background-color: var(--main-bg);
+	--im-list-container-task__font-color_header-title: var(--font-main);
+}
+.bx-im-list-task__container {
+	--im-list-task__background-color: var(--main-bg);
 }
 
 .bx-im-list-recent__scope {
@@ -272,9 +298,15 @@
 .bx-im-sidebar-chat-members-avatars__container {
 	--im-sidebar-chat-members-avatars__border-color_avatar: var(--message-self-bg);
 }
+.bx-im-dialog-chat__float-button {
+	--im-color-palette-white-base: var(--left-menu-bg);
+}
 .bx-im-dialog-chat__pinned_counter_control {
 	border-color: var(--file-border-bg);
 	color: var(--font-main);
+}
+.bx-im-content-notification-item-header__title-text {
+	color: var(--font-highlighted);
 }
 .bx-im-dialog-chat__pinned_unpin,
 .bx-im-chat-header__icon,
@@ -390,8 +422,15 @@
 .bx-im-messenger__scope.popup-window {
     background-color: var(--left-menu-bg);
 }
-.bx-im-messenger__scope.popup-window .popup-window-delimiter {
-	background-color: var(--chat-hover);
+.popup-window-delimiter:before {
+	--popup-window-delimiter-bg-color: var(--chat-hover);
+}
+.popup-window-delimiter-text {
+	background-color: transparent;
+}
+.popup-window-delimiter-section:before,
+.popup-window-delimiter-section:after {
+	--popup-window-delimiter-bg-color: var(--chat-hover);
 }
 .bx-im-messenger__scope .menu-popup-item-text {
 	color: var(--font-main) !important;
@@ -484,6 +523,7 @@
     --im-message-base__padding-left_body: 9px;
 	--bx-im-mention__background-color_highlight: var(--color-button-primary-back-hover);
 	--bx-im-mention__color_highlight: var(--color-button-primary-text);
+	--im-message-base__background-color_message-select-highlight: var(--color-button-primary-back);
 }
 .reaction-select-popup {
     background-image: var(--system-image);
@@ -617,6 +657,9 @@
 .bx-im-mention-item__scope {
     --im-mention-item__background-color_container: transparent;
     --im-mention-item__background-color_hover-container: var(--chat-hover);
+}
+.bx-im-mention.--highlight {
+	--ui-color-design-tinted-warning-bg: var(--color-button-primary-back);
 }
 .bx-im-base-file-item__scope {
     --im-media-file__color_file-name: var(--font-secondary);
@@ -827,7 +870,17 @@
 .bx-im-upload-preview-file-item__item-image {
 	background-color: var(--main-bg);
 }
-.bx-im-gallery-item__container {
+.bx-im-upload-preview-file-item__name {
+	color: var(--font-main);
+}
+.bx-im-upload-preview-file-item__size {
+	color: var(--font-secondary);
+}
+.bx-im-upload-preview-file-item__remove-icon {
+	filter: brightness(3);
+}
+
+.bx-im-elements-media-gallery-image-item__container {
 	--bx-im-gallery-item__background-color_container: var(--message-container-bg);
 }
 
@@ -850,9 +903,6 @@
 }
 .popup-window .popup-window-angly--arrow {
 	background-color: var(--message-bg);
-}
-.popup-window .popup-window-delimiter {
-	background-color: var(--message-input-bg);
 }
 .popup-window .ui-selector-item-title {
 	color: var(--font-main);
@@ -912,7 +962,8 @@
 .bx-im-content-chat-start__container,
 .bx-im-content-copilot-empty-state__container,
 .bx-im-content-collab-start__container,
-.bx-imol-content-openlines-start__container {
+.bx-imol-content-openlines-start__container,
+.bx-im-task-start__container {
 	background-color: var(--left-menu-bg) !important;
 	background-size: auto, 0 !important;
 }
@@ -1171,6 +1222,18 @@
 .bx-im-create-chat-menu-description-banner__container {
 	--im-create-chat-menu-description-banner__background-color_content: var(--message-self-bg);
 }
+.bx-im-create-chat-menu-item__button {
+	--im-create-chat-menu-item__button-background-color_copilot: var(--video-button-bg);
+}
+.bx-im-create-chat-menu-item__icon-more {
+	filter: brightness(4);
+	opacity: 0.6;
+}
+.bx-im-collab-header__links-container {
+	--im-collab-header__background-color_links-border: var(--left-menu-bg);
+	--im-collab-header__background-color_links-separator: var(--left-menu-bg);
+	--im-collab-header__font-color_link: var(--font-thirdly);
+}
 
 
 
@@ -1179,6 +1242,9 @@
 }
 .bx-im-chat-forms-button-panel__container {
 	--im-chat-forms-button-panel__background-color_container: var(--main-bg);
+}
+.bx-im-chat-forms-title-input__container {
+	--im-chat-forms-title-input__font-color_input: var(--font-main);
 }
 
 /*votes*/
@@ -1191,6 +1257,9 @@
 .vote__answer-percent,
 .vote__answer-text {
 	color: var(--font-main);
+}
+.vote__answer.--selected .vote__answer:hover, .vote__answers.--voted .vote__progress-bar:hover {
+	background-color: var(--reaction-bg);
 }
 .vote__answer.--selected .vote__answer-percent span {
 	color: var(--color-label-main);
@@ -1233,4 +1302,76 @@
 .vote__answer.--selected .vote__progress-bar-fill,
 .bx-im-message-base__wrap.--self .vote__answer.--selected .vote__progress-bar-fill {
 	background-color: var(--reaction-bg);
+}
+
+.bx-im-embedded-chat-start__container {
+	--im-embedded-chat-start__background-color_content: var(--message-container-bg);
+	--im-embedded-chat-start__font-color_title: var(--font-main);
+}
+
+
+/*** new desing ***/
+.app__left-menu {
+	display: none;
+}
+.im-chat-embedded .app__main {
+	--content-area-left-shift: 0;
+}
+.app__main {
+	background-color: var(--left-menu-bg);
+}
+.air-header__buttons,
+.air-header__search,
+.air-header__logo {
+	display: none;
+}
+.main-buttons.--air .main-buttons-item-active::before {
+	--ui-color-design-selection-bg: var(--chat-hover);
+}
+.ui-popupcomponentmaker__content--section-item {
+	background-color: var(--main-bg);
+	--ui-color-base-1: var(--font-main);
+}
+
+
+.bx-im-content-bulk-actions-panel {
+	--im-content-bulk-actions-panel__background-color_panel: var(--message-bg);
+	--im-content-bulk-actions-panel__color_counter-name: var(--font-main);
+}
+
+/**new popup menu**/
+.ui-popup-menu-item-title-text {
+	color: var(--font-main);
+}
+.ui-popup-menu-section-divider {
+	--ui-color-divider-default: var(--font-secondary);
+}
+
+.bx-im-audio-player__transcription-container {
+	--im-audio-player__color_transcription-default_text: var(--font-secondary);
+}
+.bx-im-audio-player__scope {
+	--im-audio-player__background-color_transcription-button: var(--chat-hover);
+	--im-audio-player__background-color_transcription-button_hover: var(--chat-picked);
+}
+.bx-im-audio-player__rate-button-container button {
+	filter: brightness(2);
+}
+
+.bx-im-task-start__container {
+	--im-task-start__font-color_title: var(--font-main);
+	--im-task-start__font-color_feature: var(--font-secondary);
+	--im-embedded-promo-start__font-color_feature: var(--font-secondary);
+}
+.bx-im-list-task__container {
+	--im-list-task__background-color_pinned-section: var(--chat-picked);
+	--im-list-task__background-color_pinned-section-border: transparent;
+	--im-list-task__background-color_pinned-item: transparent;
+	--im-list-task__background-color_pinned-item_hover: var(--chat-hover);
+}
+
+.bx-im-content-notification__elements {
+	--im-color-palette-white-base-rgb: var(--dark-alpha);
+	background-color: transparent !important;
+	background-image: none !important;
 }
