@@ -1310,21 +1310,6 @@
 }
 
 
-/*** new desing ***/
-.app__left-menu {
-	display: none;
-}
-.im-chat-embedded .app__main {
-	--content-area-left-shift: 0;
-}
-.app__main {
-	background-color: var(--left-menu-bg);
-}
-.air-header__buttons,
-.air-header__search,
-.air-header__logo {
-	display: none;
-}
 .main-buttons.--air .main-buttons-item-active::before {
 	--ui-color-design-selection-bg: var(--chat-hover);
 }
