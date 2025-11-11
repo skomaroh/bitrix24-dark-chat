@@ -41,7 +41,8 @@
     --grey: #b1b9bd;
 	--darkgrey: #53565f;
 	
-	--color-button-primary-back: #3b506e;
+	--color-button-primary-back: rgb(59, 80, 110);
+	--color-button-primary-back-a: 59, 80, 110;
 	--color-button-primary-text: #fff;
 	--color-button-primary-border: #3b506e;
 	--color-button-primary-back-hover: #4c6283;
@@ -1363,4 +1364,29 @@
 
 .bx-im-message-status__container {
 	--im-message-status__font-color_status: var(--font-secondary);
+}
+
+.bx-im-content-notification-item-confirm-buttons__container,
+.bx-im-content-notification-quick-answer__container {
+	--ui-color-design-outline-na-bg: #ffffff0a;
+	--ui-color-design-outline-na-stroke: #ffffff11;
+	--ui-color-design-outline-na-content: var(--font-thirdly);
+}
+
+.bx-im-message-ai-assistant-base-message__container {
+	--im-message-ai-assistant-answer__background-color_bottom-panel: var(--dark-alpha);
+	--im-message-ai-assistant-answer__color_warning: var(--font-main);
+}
+
+.bx-im-keyboard__container {
+	--im-keyboard__background-color-white: var(--color-button-primary-back-a);
+	--im-keyboard__font-color-base: var(--font-secondary);
+	--im-keyboard__font-color: var(--font-main);
+}
+
+.reactions-select-popover {
+	--ui-color-bg-content-primary: var(--darker);
+}
+.reactions-select__expand-button {
+	--ui-color: var(--dark);
 }
