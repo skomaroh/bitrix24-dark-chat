@@ -109,10 +109,12 @@
 	--im-notification-item-unread-background-color: var(--chat-enabled);
 	--im-notification-item-border-color: var(--message-container-bg);
 	--im-notification-item-border-color-unread: var(--message-self-reply-bg);
+	--im-notification-item-content-text-color: var(--font-thirdly);
 }
 .bx-im-content-notification-item-content__content-text {
 	--font-secondary: var(--font-thirdly);
 }
+.bx-im-content-notification-item-header__title-container,
 .bx-im-content-notification-item-header__title-container .bx-im-chat-title__text {
 	--im-color-palette-black-base: var(--font-main);
 }
@@ -1168,6 +1170,7 @@
 	--im-message-sign__font-color_description: var(--font-thirdly);
 	--im-message-sign__color_document: var(--color-label-main);
 	--im-message-sign__border-color_link: var(--color-link);
+	--im-message-sign__background-color_self: var(--message-self-bg);
 }
 
 .bx-im-message-copilot-added-users__container {
@@ -1389,4 +1392,26 @@
 }
 .reactions-select__expand-button {
 	--ui-color: var(--dark);
+}
+
+.bx-im-emote-popup__container {
+	--im-emote-selector__background-color: var(--dark-alpha);
+	--im-emote-selector__background-tab-color: var(--main-bg);
+	--im-emote-selector__background-tab-border-color: var(--left-menu-bg);
+}
+
+.ui-chip {
+	--background: var(--new-chat-button-bg);
+}
+.ui-chip.--filled,
+.ui-chip.--outline {
+	--text-color: var(--font-thirdly);
+	--text-color-hover: var(--font-main);
+}
+.ui-chip.--outline {
+	--border-color: var(--new-chat-button-bg);
+}
+.ui-chip.--filled {
+	--background: var(--video-button-bg);
+	--border-color: var(--video-button-bg-hover);
 }
