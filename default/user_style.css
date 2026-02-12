@@ -105,6 +105,11 @@
 	--im-list-container-recent__background-color_create-chat: var(--ui-button-primary);
 }
 
+.bx-im-list-container-recent-unread-slider {
+	--im-list-container-recent-unread-slider__background-color_container: var(--surface-tertiary);
+	--im-list-container-recent-unread-slider__color_title: var(--text-primary);
+}
+
 .bx-im-list-recent__pinned_scope {
 	--im-list-recent__background-color: transparent;
 	--im-list-recent__background-color_hover: var(--state-hover);
@@ -218,6 +223,14 @@
 
 .bx-im-message-default-content__text {
 	padding-right: 0;
+}
+
+.bx-im-transcription-text__container {
+	--im-transcription-text__color_default-text: var(--text-secondary);
+}
+.bx-im-transcription-button__container {
+	--im-transcription-button__background-color_button: var(--surface-secondary);
+	--im-transcription-button__background-color_button-hover: var(--surface-tertiary);
 }
 
 /* Message Bubbles */
@@ -1246,6 +1259,28 @@
 	--im-emote-selector__background-color: var(--color-dark-alpha);
 	--im-emote-selector__background-tab-color: var(--surface-tertiary);
 	--im-emote-selector__background-tab-border-color: var(--surface-primary);
+}
+.bx-im-emote-popup__buttons-container {
+	--ui-color-bg-vibrant-accent: var(--surface-tertiary);
+}
+
+.bx-im-emoji-content__scope {
+	--ui-color-bg-vibrant-default: var(--surface-secondary);
+}
+.bx-im-emote-popup__container {
+	--im-emote-popup__background-color_buttons-container: var(--surface-secondary);
+}
+.bx-im-tab-stickers__container {
+	--ui-color-bg-vibrant-less: var(--surface-secondary);
+}
+.bx-im-emote-selector-tab-stickers__packs-container {
+	--ui-color-bg-vibrant-less: var(--surface-secondary);
+}
+.bx-im-emote-selector-tab-stickers__container {
+	--ui-color-bg-vibrant-less: var(--surface-tertiary);
+}
+.bx-im-stickers-header-add-button__container {
+	--ui-color-bg-vibrant-less-more: var(--color-dark-alpha);
 }
 
 /* Dropdown */
