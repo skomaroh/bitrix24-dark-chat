@@ -10,6 +10,7 @@
 	--surface-message: #363c41;
 	--surface-message-self: #234a5e;
 	--surface-message-self-reply: #20546e;
+	--surface-message-self-reply-rgb: rgb(32, 84, 110);
 	--surface-message-pinned: #2f3134;
 	--surface-message-pinned-border: #3a3e44;
 
@@ -186,11 +187,16 @@
 	--im-message-base__background-color_self: var(--surface-message-self);
 	--bx-im-message-quote__color_name: var(--text-tertiary);
 	--bx-im-message-quote__color_time: var(--text-secondary);
+	--bx-im-message-quote__background: var(--state-hover);
+	--bx-im-message-quote__color: var(--text-secondary);
+	--bx-im-message-quote__border-color: var(--state-active);
 	--im-message-base__padding-right_body: 9px;
 	--im-message-base__padding-left_body: 9px;
 	--bx-im-mention__background-color_highlight: var(--button-primary-hover);
 	--bx-im-mention__color_highlight: var(--button-primary-text);
 	--im-message-base__background-color_message-select-highlight: var(--button-primary-bg);
+	--ui-color-palette-gray-02: var(--state-hover);
+	--ui-color-palette-gray-90: var(--font-secondary);
 }
 
 .bx-im-message-base__text {
@@ -273,19 +279,22 @@
 
 /* Message Quote */
 .bx-im-message-quote {
-	background-color: var(--state-hover);
+	--bx-im-message-quote-with-context__background: var(--state-hover);
 	--bx-im-message-quote__color: var(--text-secondary);
+	--bx-im-message-quote-with-context__color_name: var(--text-accent);
 	--bx-im-message-quote-with-context__border-color: var(--surface-message-pinned-border);
-	padding-right: 0.6em;
-	border-radius: 5px;
 }
 
 .bx-im-message-base__wrap.--self .bx-im-message-quote {
-	background-color: var(--surface-message-self-reply);
-	--bx-im-message-quote__color: var(--text-tertiary);
+	--bx-im-message-quote__background: var(--surface-message-self-reply);
+	--bx-im-message-quote__color_name: var(--text-tertiary);
+	--bx-im-message-quote-with-context__color_name: var(--text-accent);
 	--bx-im-message-quote-with-context__border-color: var(--color-dark-alpha);
-	padding-right: 0.6em;
-	border-radius: 5px;
+	--ui-color-palette-gray-90: var(--font-secondary);
+}
+.bx-im-message-base__wrap.--self {
+	--bx-im-message-quote__background: var(--surface-message-self-reply);
+	--bx-im-message-quote__background-rgb: var(--surface-message-self-reply-rgb);
 }
 
 .bx-im-message-quote__wrap::before {
