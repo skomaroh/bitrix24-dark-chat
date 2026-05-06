@@ -106,6 +106,11 @@
 .bx-im-list-recent-item__wrap {
 	--im-list-recent-item__background-color_selected: var(--state-active);
 }
+.bx-im-list-base__fixed_container {
+	--im-list-base-fixed__background-color_container: var(--state-selected);
+	--im-list-base-fixed__background-color_border: var(--state-selected);
+	--im-list-base-fixed__background-color_container_hover: var(--state-hover);
+}
 
 .bx-im-list-recent__scope {
 	--im-list-recent__background-color: var(--surface-tertiary);
@@ -179,6 +184,13 @@
 
 .bx-im-chat-title__text {
 	color: var(--text-primary);
+}
+
+.bx-im-chat-header-entity-button__text {
+	--ui-color-accent-main-link: var(--tag-secondary-bg);
+}
+.bx-im-chat-header-entity-button__icon {
+	--ui-icon-set__icon-color: var(--tag-secondary-bg);
 }
 
 /* Content Chat */
