@@ -111,6 +111,26 @@
 	--im-list-base-fixed__background-color_border: var(--state-selected);
 	--im-list-base-fixed__background-color_container_hover: var(--state-hover);
 }
+.bx-im-collab-nested-list__fixed-items_container.bx-im-list-base__fixed_container {
+	--im-list-base-fixed__background-color_container: transparent;
+	--im-list-base-fixed__background-color_border: transparent;
+}
+
+.bx-im-list-container-slider {
+	--im-list-container-slider__background-color_container: var(--surface-tertiary);
+}
+.bx-im-list-container-slider .ui-chip.--outline-no-accent {
+	--background: var(--state-hover);
+	--text-color: var(--text-secondary);
+	--text-color-hover: var(--text-primary);
+	--border-color: var(--state-hover);
+}
+.bx-im-list-container-slider .ui-chip.--outline-accent-2 {
+	--text-color: var(--text-secondary);
+	--background: var(--surface-message-self);
+	--border-color: var(--surface-message-self-reply);
+	--border-color-hover: var(--surface-message-self-reply);
+}
 
 .bx-im-list-recent__scope {
 	--im-list-recent__background-color: var(--surface-tertiary);
@@ -841,6 +861,16 @@
 
 .bx-im-list-collab__container {
 	--im-list-collab__background-color: transparent;
+}
+
+.bx-im-message-collab-convert {
+	background-color: var(--surface-message-pinned);
+}
+.bx-im-message-collab-convert__title {
+	color: var(--text-primary);
+}
+.bx-im-message-collab-convert__description, .bx-im-message-collab-convert__item-text {
+	color: var(--text-secondary);
 }
 
 /* Copilot */
