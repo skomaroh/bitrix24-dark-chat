@@ -1184,6 +1184,14 @@
 	--im-message-ai-assistant-answer__color_warning: var(--text-primary);
 }
 
+.bx-im-message-ai-assistant-v2-base-message__container .bx-im-message-base__body {
+	--ui-color-bg-content-primary: var(--color-dark-alpha);
+}
+
+.bx-im-keyboard-button__container.ai-assistant {
+	--im-gradient-ai-assistant-bg: var(--color-dark-alpha);
+}
+
 .bx-im-message-sign__scope {
 	--im-message-sign__font-color_title: var(--text-primary);
 	--im-message-sign__font-color_description: var(--text-tertiary);
