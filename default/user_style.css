@@ -132,6 +132,16 @@
 	--border-color-hover: var(--surface-message-self-reply);
 }
 
+.bx-im-list-container-slider.--compact-mode {
+	--ui-color-base-7: var(--surface-secondary);
+}
+.bx-im-list-container-slider.--compact-mode .bx-im-list-container-slider__close-container {
+	--ui-color-design-outline-a2-bg: var(--surface-secondary);
+}
+.bx-im-list-container-slider.--compact-mode .bx-im-list-container-slider__close-container:before {
+	background: linear-gradient(90deg, var(--surface-secondary) 0%, var(--surface-secondary) 50.28%, rgba(255, 255, 255, 0) 100%);
+}
+
 .bx-im-list-recent__scope {
 	--im-list-recent__background-color: var(--surface-tertiary);
 	--im-list-recent__background-color_calls-section: var(--button-primary-hover);
