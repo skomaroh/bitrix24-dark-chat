@@ -21,6 +21,7 @@
 
 	/* Text Colors */
 	--text-primary: #ffffff;
+	--text-primary-rgb: rgb(255, 255, 255);
 	--text-secondary: #959ca4;
 	--text-tertiary: #bdc1c6;
 	--text-accent: #11a9d9;
@@ -137,6 +138,10 @@
 }
 .bx-im-list-container-slider.--compact-mode .bx-im-list-container-slider__close-container {
 	--ui-color-design-outline-a2-bg: var(--surface-secondary);
+	--ui-color-design-outline-a2-stroke: var(--ui-border);
+}
+.bx-im-list-container-slider.--compact-mode .bx-im-list-container-slider__close-container:hover {
+	--ui-color-divider-less: var(--surface-tertiary);
 }
 .bx-im-list-container-slider.--compact-mode .bx-im-list-container-slider__close-container:before {
 	background: linear-gradient(90deg, var(--surface-secondary) 0%, var(--surface-secondary) 50.28%, rgba(255, 255, 255, 0) 100%);
@@ -241,7 +246,8 @@
 
 /* Messages */
 .bx-im-message-text-content__container {
-	--ui-color-base-1: var(--text-tertiary);	
+	--ui-color-base-1: var(--text-tertiary);
+	--ui-typography-color-text: var(--text-tertiary);
 }
 
 .bx-im-message-base__scope {
@@ -1196,6 +1202,14 @@
 
 .bx-im-message-ai-assistant-v2-base-message__container .bx-im-message-base__body {
 	--ui-color-bg-content-primary: var(--color-dark-alpha);
+}
+
+.bx-im-message-ai-bizproc__bottom-panel {
+	--im-color-accent-soft-blue-3: var(--surface-message);
+	--im-color-palette-black-base-rgb: var(--text-primary-rgb);
+}
+.bx-im-message-ai-bizproc__warning {
+	color: var(--text-secondary);
 }
 
 .bx-im-keyboard-button__container.ai-assistant {
